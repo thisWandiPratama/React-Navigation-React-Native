@@ -59,7 +59,7 @@ public class MainActivity extends ReactActivity {
 ```
 
 ## React Navigation stack navigator
-- createStackNavigator adalah sebuah ``function`` yang returns sesuatu React component. 
+- createStackNavigator adalah sebuah ``function`` yang ``returns`` sesuatu ``React component.`` 
  #### ``App.js``
 ```
 import React from "react";
