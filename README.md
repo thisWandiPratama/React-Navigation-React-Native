@@ -237,7 +237,7 @@ const Beranda = createAppContainer(AppPageBeranda);
 export default Beranda
 ```
 
-##  
+##  Params
 
 ```
 // Data di state di Screen 1
