@@ -85,3 +85,179 @@ const AppNavigator = createStackNavigator({
 
 export default createAppContainer(AppNavigator);
 ```
+
+## TAB
+```
+import React from 'react'
+import { StyleSheet, Image } from 'react-native'
+import { createStackNavigator, createBottomTabNavigator } from 'react-navigation'
+import Home from "../screen/Home";
+import Search from "../screen/Search";
+import Add from '../screen/Add'
+import Like from '../screen/Like'
+import Profile from '../screen/Profile'
+
+
+const homeIcon = require('../assets/home.png')
+const searchIcon = require('../assets/search.png')
+const addIcon = require('../assets/plus.png')
+const likeIcon = require('../assets/like.png')
+const profileIcon = require('../assets/profile.png')
+
+
+export default createBottomTabNavigator({
+    Home: {
+        screen: Home,
+        navigationOptions: {
+            header: null,
+            tabBarIcon: ({ tintColor }) => (
+                <Image source={homeIcon} style={[styles.icon, { tintColor }]} />
+            )
+        }
+    },
+    Search: {
+        screen: Search,
+        navigationOptions: {
+            header: null,
+            tabBarIcon: ({ tintColor }) => (
+                <Image source={searchIcon} style={[styles.icon, { tintColor}]} />
+            )
+        }
+    },
+    Add: {
+        screen: Add,
+        navigationOptions: {
+            header: null,
+            tabBarIcon: ({ tintColor }) => (
+                <Image source={addIcon} style={[styles.icon, { tintColor  }]} />
+            )
+        }
+    },
+    Like: {
+        screen: Like,
+        navigationOptions: {
+            header: null,
+            tabBarIcon: ({ tintColor }) => (
+                <Image source={likeIcon} style={[styles.icon, { tintColor  }]} />
+            )
+        }
+    },
+    Profile: {
+        screen: Profile,
+        navigationOptions: {
+            header: null,
+            tabBarIcon: ({ tintColor }) => (
+                <Image source={profileIcon} style={[styles.icon, { tintColor }]} />
+            )
+        }
+    }
+}, {
+    tabBarOptions:{
+        activeTintColor:"#00b4d5",
+        inactiveTintColor:'#babec4',
+        indicatorStyle : { backgroundColor:'red'},
+        labelStyle:{
+            fontSize:14
+        },
+        style:{
+            backgroundColor: '#fff',
+            height: 60,
+            padding: 5
+        },
+        showLabel: false
+    }
+})
+
+const styles = StyleSheet.create({
+    icon:{
+        height: 20,
+        width: 20
+    }
+})
+```
+
+## Tab & Stack 
+
+```
+const AppTabNavigator = createMaterialTopTabNavigator({
+    Beranda: {
+        screen:MenuHome,
+       
+    },
+
+    Education: {
+        screen: Education
+    },
+
+    Status: {
+        screen: Status
+    },
+
+    Absensi: {
+        screen: Absensi
+    },
+        
+},{
+tabBarOptions: {
+    activeTintColor: '#fff',
+
+    labelStyle: {
+      fontSize: 8,
+    },
+    style: {
+      backgroundColor: '#009688',
+    },
+  }
+});
+
+  const AppPageBeranda = createStackNavigator({
+    rootTab:{
+      screen: AppTabNavigator,
+      navigationOptions: () => ({
+        header: null,
+      }),
+    
+    },
+      
+    HomeEduc:{
+        screen: HomeEduc,
+        navigationOptions: () => ({
+          header: null,
+        }),
+    },
+    Modul:{
+      screen: Modul,
+      navigationOptions: () => ({
+        title:'Modul Pembelajaran'
+      }),
+  },
+})
+
+const Beranda = createAppContainer(AppPageBeranda);
+export default Beranda
+```
+
+##  
+
+```
+// Data di state di Screen 1
+constructor(props) {
+ 
+    super(props)
+ 
+    this.state = {
+        Nama: 'wandi pratama',
+        
+ 
+    }
+ 
+  }
+ 
+ Button
+            this.props.navigation.navigate('HomeAbs', {NamaUser: Nama})
+            
+ // screen 2 
+                   <Text>{his.props.navigation.state.params.NamaUser}</Text>
+
+            
+            
