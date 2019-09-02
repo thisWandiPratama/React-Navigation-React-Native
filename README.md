@@ -258,7 +258,7 @@ constructor(props) {
             
  // screen 2 
                    <Text>{his.props.navigation.state.params.NamaUser}</Text>
-
+````
 # Data Fetching
 
 Langkah pertama tentunya membuat kelas komponen, dengan script sebagai berikut
